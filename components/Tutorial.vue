@@ -55,7 +55,7 @@ export default {
           trigger: this.$el.querySelector(".Tutorial__box"),
           start: "top center",
           markers: true,
-          toggleActions: "play pause none none",
+          toggleActions: "play none none reverse",
           // onEnter: () => {console.log("onEnter")},
           // onEnterBack: () => {console.log("onEnterBack")},
           // onLeave: () => {console.log("onLeave")},
@@ -67,3 +67,10 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.Tutorial{
+  &__box{
+    background-color: rgba($color: blue, $alpha: .2);
+  }
+}
+</style>

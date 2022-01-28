@@ -13,5 +13,10 @@
     "gsap": "^3.9.1",
     "nuxt": "^2.15.7",
     "throttle-debounce": "^3.0.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^1.2.1",
+    "sass": "^1.49.0",
+    "sass-loader": "^10.2.1"
   }
 }

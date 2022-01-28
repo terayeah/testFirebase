@@ -1,0 +1,79 @@
+@import 'type';
+@import 'fonts';
+
+.container{
+    position: relative;
+    h2{
+        font-size: half(32px);
+        @include pc(){
+            font-size: 32px;
+        }
+    }
+}
+
+
+.article-section-texts {
+    @include mobile-layout-campaign-slug();
+    @include pc(){
+        max-width: 994px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+.outline-index{
+    display: block;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $body-color;
+    letter-spacing: 0.08em;
+    color: transparent;
+}
+
+.link-line{
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 1px;
+    display: inline-block;
+    &:after{
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: $body-color;
+        transform: translateX(-110%);
+        animation: link-line 0.3s;
+    }
+
+    @include pc(){
+        &:hover{
+            &:after{
+                animation: link-line-hover 0.3s;
+                transform: translateX(0);
+            }
+        }
+    }
+
+    @keyframes link-line-hover{
+        0%{
+            transform: translateX(-110%);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes link-line{
+        0%{
+            transform: translateX(0);
+        }
+        100%{
+            transform: translateX(110%);
+        }
+    }
+
+
+}
