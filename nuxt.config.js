@@ -21,7 +21,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    // '@/assets/css/style.scss'
+    '@/assets/css/base/locomotive-scroll.css',
   ],
   styleResources: {
     scss: [
@@ -31,6 +31,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/locomotiveScroll.client.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
