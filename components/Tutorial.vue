@@ -56,6 +56,7 @@ export default {
           start: "top center",
           markers: true,
           toggleActions: "play none none reverse",
+          scroller:".scrollContainer",
           // onEnter: () => {console.log("onEnter")},
           // onEnterBack: () => {console.log("onEnterBack")},
           // onLeave: () => {console.log("onLeave")},
