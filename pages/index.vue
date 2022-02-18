@@ -1,15 +1,33 @@
 <template>
 <div class="scrollContainer">
+  <!-- <Tutorial/>
   <Tutorial/>
-  <Tutorial/>
-  <Tutorial/>
+  <Tutorial/> -->
+  <Blog :posts="posts" />
 </div>
 </template>
 
 <script>
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { createClient } from '~/plugins/contentful.js';
+const client = createClient();
+
 export default {
+  asyncData({ env }) {
+    return Promise.all([
+      client.getEntries({
+        'content_type': env.CTF_BLOG_TYPE_ID,
+        order: '-sys.createdAt',
+      }),
+    ])
+    .then(([posts]) => {
+      return {
+        posts: posts.items,
+      };
+    })
+    .catch(console.error);
+  },
   mounted(){
     gsap.registerPlugin(ScrollTrigger);
     const locoScroll = new this.locomotiveScroll({

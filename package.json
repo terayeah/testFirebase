@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "contentful": "^9.1.10",
     "core-js": "^3.15.1",
     "gsap": "^3.9.1",
     "locomotive-scroll": "^4.1.3",
