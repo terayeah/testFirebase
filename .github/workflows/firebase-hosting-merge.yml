@@ -3,6 +3,8 @@
 
 name: Deploy to Firebase Hosting on merge
 'on':
+  repository_dispatch:
+  types: [publish-event]
   push:
     branches:
       - main
