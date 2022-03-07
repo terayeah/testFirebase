@@ -1,6 +1,6 @@
 <template>
-<div class="blog">
-  <h1 v-if="isReady">{{blogItem.fields.title}}</h1>
+<div class="blog" v-if="isReady">
+  <h1>{{blogItem.fields.title}}</h1>
 </div>
 </template>
 <script>
@@ -30,7 +30,7 @@ export default {
   //   }).catch(console.error)
   // },
   created () {
-    let id = this.$route.params.id;
+    let id = this.$route.query.id;
     return Promise.all([
       client.getEntries({
         'content_type': 'blog',
